@@ -1,1 +1,7 @@
-
+json
+random
+discord
+os
+requests
+flask
+threading

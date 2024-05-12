@@ -7,6 +7,8 @@ from discord.ext.commands import has_permissions
 from web_server import keep_alive
 import random
 
+
+
 keep_alive()
 
 
@@ -32,6 +34,6 @@ async def gameban(ctx, id: int):
             
 
 
+token = os.environ.get("TOKEN")
+client.run(token)
 
-client.run("MTIzODUzMTY5MDI4MDc3OTgxNg.GwF24M.0AjdD6RAa_e8559uzMqz1JqU6X7-IA3M3u1rfs")
-  

@@ -1,11 +1,9 @@
 import json
-import random
 import discord
 import os
 import requests
 from discord.ext import commands
 from discord.ext.commands import has_permissions
-import urllib
 from web_server import keep_alive
 
 keep_alive()

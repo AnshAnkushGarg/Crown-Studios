@@ -29,7 +29,8 @@ async def gameban(ctx, id: int):
     with open("banned.json", "r+") as file:
         data = json.load(file)
         data["banned_users"].append(id)
-        await ctx.channel.send(f"There are {len(data["banned_users"])} banned users currently")
+        banned_users = data["banned_users"]
+        await ctx.channel.send(f"There are {len(banned_users)} banned users currently")
         file.seek(0)
         json.dump(data, file, indent=4)
         

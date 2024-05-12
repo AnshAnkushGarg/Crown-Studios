@@ -5,6 +5,7 @@ import requests
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 from web_server import keep_alive
+import random
 
 keep_alive()
 

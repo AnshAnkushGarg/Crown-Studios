@@ -1,7 +1,4 @@
 
 discord
-os
-random
-requests
 flask
 threading

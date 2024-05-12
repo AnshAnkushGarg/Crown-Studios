@@ -33,7 +33,7 @@ async def gameban(ctx, id: int):
         json.dump(data, file, indent=4)
 
 @client.command()
-async def listbanned():
+async def listbanned(ctx):
     with open("banned.json", "r+") as file:
         data = json.load(file)
         await ctx.channel.send(data["banned_users"])

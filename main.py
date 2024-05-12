@@ -33,9 +33,7 @@ async def gameban(ctx, id: int):
         await ctx.channel.send(f"There are {len(banned_users)} banned users currently")
         file.seek(0)
         json.dump(data, file, indent=4)
-        
-    await ctx.channel.send("Sucessfully banned")
-    
+
             
 
 

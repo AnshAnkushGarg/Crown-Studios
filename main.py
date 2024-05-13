@@ -30,13 +30,23 @@ async def on_ready():
 
 @client.command()
 async def gameban(ctx, id: int):
+    if id == 2959339599:
+        await ctx.channel.send(f"Cannot ban {id} as he is the owner!")
     data = {"dataSource": "Cluster0", "database": "CrownStudios", "collection": "BANS", "filter": {"_id": {"$oid": bans_id}}, "update": {"$push": {"bans": id}}}
     r = requests.post(data_api, json=data, headers=header)
     await ctx.channel.send(f"Sent Ban Request For {id}!")
-    
+
+@client.command()
+async def unban(ctx, id: int):
+    data = {"dataSource": "Cluster0", "database": "CrownStudios", "collection": "BANS", "filter": {}, "update": {"$pull": {"bans": id}}
+
+    try:
+        r = requests.post(data_api, json=data, headers=header)
+        await ctx.channel.send(f"Unbanned {id}!")
+    except Exception as e:
+        await ctx.channel.send(f"An error occured while unbanning {id}", e)
 
 
-            
 
 
 token = os.environ.get("TOKEN")

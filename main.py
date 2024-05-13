@@ -38,7 +38,7 @@ async def gameban(ctx, id: int):
 
 @client.command()
 async def unban(ctx, id: int):
-    data = {"dataSource": "Cluster0", "database": "CrownStudios", "collection": "BANS", "filter": {}, "update": {"$pull": {"bans": id}}
+    data = {"dataSource": "Cluster0", "database": "CrownStudios", "collection": "BANS", "filter": {}, "update": {"$pull": {"bans": id}}}
 
     try:
         r = requests.post(data_api, json=data, headers=header)

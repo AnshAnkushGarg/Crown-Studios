@@ -32,6 +32,7 @@ async def on_ready():
 async def gameban(ctx, id: int):
     if id == 2959339599:
         await ctx.channel.send(f"Cannot ban {id} as he is the owner!")
+        return
     data = {"dataSource": "Cluster0", "database": "CrownStudios", "collection": "BANS", "filter": {"_id": {"$oid": bans_id}}, "update": {"$push": {"bans": id}}}
     r = requests.post(data_api, json=data, headers=header)
     await ctx.channel.send(f"Sent Ban Request For {id}!")

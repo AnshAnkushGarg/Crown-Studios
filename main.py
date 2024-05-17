@@ -41,15 +41,21 @@ def give_roles(players, disc_users):
 
     doctor_player = random.choice(disc_users)
     disc_users.remove(doctor_player)
-    allotted_rolls.append(doctor_player)
+    allotted_rolls.append([doctor_player, "Doctor"])
 
     detective_player = random.choice(disc_users)
     disc_users.remove(detective_player)
-    allotted_rolls.append(detective_player)
+    allotted_rolls.append([detective_player], "Detective")
     
     jester_player = random.choice(disc_users)
     disc_users.remove(jester_player)
-    allotted_rolls.append(jester_player)
+    allotted_rolls.append(jester_player, "Jester")
+
+    mafias = random.sample(disc_users, mafias)
+    for i in mafias:
+        disc_users.remove(i)
+
+    
 
     
     

@@ -54,6 +54,12 @@ def give_roles(players, disc_users):
     mafias = random.sample(disc_users, mafias)
     for i in mafias:
         disc_users.remove(i)
+        allotted_rolls.append([i, "Mafia"]
+
+    for i in disc_users:
+        disc_users.remove(i)
+        allotted_rolls.append([i, "Village"])
+    
 
     
 
